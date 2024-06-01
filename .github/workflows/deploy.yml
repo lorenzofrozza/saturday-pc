@@ -1,4 +1,4 @@
-name: Docker Image CI - Lorenzo Frozza
+name: Deploy
 
 on:
   push:
@@ -7,15 +7,13 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: List all directories
+    - name: Listar todos os arquivos do projeto
       run: ls -la
-    
+
     - name: Transferir os arquivos para a VM
       uses: appleboy/scp-action@master
       with:
